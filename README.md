@@ -41,7 +41,8 @@ Interesting approaches:
 
 # Takeaways
 
-* None yet.
+* Day 03 (Rucksack Reorganisation): I wasted some time by mapping both uppercase and lowercase letters to 1-26.
+  Might want to instead do things like in a way that doesn't leave it open to mistakes, like `with_index(1).to_h` or something.
 
 # Posting schedule and policy
 
