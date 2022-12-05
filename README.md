@@ -43,6 +43,9 @@ Interesting approaches:
 
 * Day 03 (Rucksack Reorganisation): I wasted some time by mapping both uppercase and lowercase letters to 1-26.
   Might want to instead do things like in a way that doesn't leave it open to mistakes, like `with_index(1).to_h` or something.
+* Day 05 (Supply Stacks): Parsing was harder than the actual problem.
+  Might want to consider transposing for things like this.
+  A little time spent thinking about it and deciding to transpose could have overall saved time compared to just trying to impelement parsing left-to-right as fast as possible.
 
 # Posting schedule and policy
 
