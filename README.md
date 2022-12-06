@@ -37,7 +37,7 @@ Favourite problems:
 
 Interesting approaches:
 
-* None yet.
+* Day 06 (Tuning Trouble): You know, it's too bad. I came up with a nice O(n) algorithm (rather than O(mn)) since this is similar to some commonly-seen questions, but you can barely tell the difference with m = 14.
 
 # Takeaways
 
