@@ -46,6 +46,11 @@ Interesting approaches:
 * Day 05 (Supply Stacks): Parsing was harder than the actual problem.
   Might want to consider transposing for things like this.
   A little time spent thinking about it and deciding to transpose could have overall saved time compared to just trying to impelement parsing left-to-right as fast as possible.
+* Day 07 (No Space Left On Device): My initial version actually wasted some time by keeping unnecessary information: The full path and size of each individual file, instead of directories.
+  Perhaps the takeaway here is to only keep the information that is necessary to solve the problem and no more.
+  The problem was that I did not consider it safe to assume that all the information for one directory would arrive at one chunk.
+  Though if you think about it, it has to, because otherwise the results from `ls` would have had to be inconsistent.
+  I'm not sure what the takeaway here is, then; it could be about judging which assumptions are safe to make.
 
 # Posting schedule and policy
 
