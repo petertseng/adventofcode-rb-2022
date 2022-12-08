@@ -38,6 +38,8 @@ Favourite problems:
 Interesting approaches:
 
 * Day 06 (Tuning Trouble): You know, it's too bad. I came up with a nice O(n) algorithm (rather than O(mn)) since this is similar to some commonly-seen questions, but you can barely tell the difference with m = 14.
+* Day 08 (Treetop Tree House): You can figure out all viewing distances to the left by scanning left-to-right across the trees.
+  You can then repeat this for each of the four directions.
 
 # Takeaways
 
@@ -51,6 +53,11 @@ Interesting approaches:
   The problem was that I did not consider it safe to assume that all the information for one directory would arrive at one chunk.
   Though if you think about it, it has to, because otherwise the results from `ls` would have had to be inconsistent.
   I'm not sure what the takeaway here is, then; it could be about judging which assumptions are safe to make.
+* Day 08 (Treetop Tree House): It was frustrating that `take_while` doesn't work.
+  You need to conditionally add 1 to its result, or not.
+  In my alternative solution, I didn't cleanly split the height comparison into possible cases (less, equal, greater) and thus did the wrong thing by double-counting trees that are equal.
+  Worth considering how each of the three cases handles when faced with such a situation.
+  A colleague has since suggested unconditionally adding 1, but upper-bounding by how many trees there actually are in that direction, which works well.
 
 # Posting schedule and policy
 
