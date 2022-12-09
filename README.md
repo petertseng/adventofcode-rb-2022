@@ -33,7 +33,7 @@ Some may additionally support other ways:
 
 Favourite problems:
 
-* None yet.
+* Day 09 (Rope Bridge): Interesting problem to think about for sure!
 
 Interesting approaches:
 
@@ -58,6 +58,9 @@ Interesting approaches:
   In my alternative solution, I didn't cleanly split the height comparison into possible cases (less, equal, greater) and thus did the wrong thing by double-counting trees that are equal.
   Worth considering how each of the three cases handles when faced with such a situation.
   A colleague has since suggested unconditionally adding 1, but upper-bounding by how many trees there actually are in that direction, which works well.
+* Day 09 (Rope Bridge): Actually part 2 warned us that "more types of motion are possible than before", which is indeed the case, since tails can move diagonally, whereas the head never does.
+  I didn't cover this case since I didn't write an `else raise "invalid"` (or similar) in my follow check.
+  So if an earlier part's assumption could potetially be violated, there needs to be an assertion on that assumption.
 
 # Posting schedule and policy
 
