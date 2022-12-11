@@ -40,6 +40,8 @@ Interesting approaches:
 * Day 06 (Tuning Trouble): You know, it's too bad. I came up with a nice O(n) algorithm (rather than O(mn)) since this is similar to some commonly-seen questions, but you can barely tell the difference with m = 14.
 * Day 08 (Treetop Tree House): You can figure out all viewing distances to the left by scanning left-to-right across the trees.
   You can then repeat this for each of the four directions.
+* Day 11 (Monkey in the Middle): All items can be simulated independently of each other.
+  You can then find cycles in the item positions and use them to skip most (> 97%) of the iterations.
 
 # Takeaways
 
