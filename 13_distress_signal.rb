@@ -1,22 +1,28 @@
 verbose = ARGV.delete('-v')
 
-def cmp(left, right)
-  if left.is_a?(Integer) && right.is_a?(Integer)
-    left - right
-  elsif left.is_a?(Array) && right.is_a?(Array)
-    left.zip(right) { |l, r|
-      break unless r
-      v = cmp(l, r)
-      return v if v != 0
-    }
-    left.size - right.size
-  elsif left.is_a?(Integer) && right.is_a?(Array)
-    cmp([left], right)
-  elsif left.is_a?(Array) && right.is_a?(Integer)
-    cmp(left, [right])
-  else raise "bad cmp #{left} #{right}"
-  end
-end
+using(Module.new {
+  refine(Integer) {
+    def <=>(that)
+      that.is_a?(Array) ? [self] <=> that : self - that
+    end
+  }
+  refine(Array) {
+    # we can't include Comparable since it won't use the refined <=>
+    def <(that)
+      (self <=> that) < 0
+    end
+
+    def <=>(that)
+      that = [that] if that.is_a?(Integer)
+      zip(that) { |l, r|
+        break unless r
+        v = l <=> r
+        return v if v != 0
+      }
+      size - that.size
+    end
+  }
+})
 
 # I refuse to use eval or JSON.parse, so I'm writing my own parser.
 def packet(s, pos)
@@ -66,10 +72,10 @@ pairs = ARGF.each("\n\n", chomp: true).map { |pair|
   lines.map { |l| packet(l, 0).tap { |_, s| raise "unparsed #{l[s..]} (#{s} vs #{l.size})" if s != l.size }.first }.freeze
 }.freeze
 
-puts pairs.each_with_index.map { |pair, i| cmp(*pair) < 0 ? i + 1 : 0 }.tap { p _1 if verbose }.sum
+puts pairs.each_with_index.map { |(a, b), i| a < b ? i + 1 : 0 }.tap { p _1 if verbose }.sum
 
 packets = pairs.flatten(1).freeze
 marks = [[[2].freeze].freeze, [[6].freeze].freeze].freeze
-mark_poses = marks.map.with_index(1) { |mark, i| packets.count { |pack| cmp(pack, mark) < 0 } + i }
+mark_poses = marks.map.with_index(1) { |mark, i| packets.count { |pack| pack < mark } + i }
 p mark_poses if verbose
 puts mark_poses.reduce(:*)
