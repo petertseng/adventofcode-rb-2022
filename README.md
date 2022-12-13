@@ -42,6 +42,7 @@ Interesting approaches:
   You can then repeat this for each of the four directions.
 * Day 11 (Monkey in the Middle): All items can be simulated independently of each other.
   You can then find cycles in the item positions and use them to skip most (> 97%) of the iterations.
+* Day 13 (Distress Signal): An interesting refresher on how to write a parser (I refuse to use eval on untrusted inputs).
 
 # Takeaways
 
