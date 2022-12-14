@@ -34,6 +34,7 @@ Some may additionally support other ways:
 Favourite problems:
 
 * Day 09 (Rope Bridge): Interesting problem to think about for sure!
+* Day 14 (Regolith Reservoir): Good to revisit an old favourite (2018 day 17).
 
 Interesting approaches:
 
@@ -43,6 +44,9 @@ Interesting approaches:
 * Day 11 (Monkey in the Middle): All items can be simulated independently of each other.
   You can then find cycles in the item positions and use them to skip most (> 97%) of the iterations.
 * Day 13 (Distress Signal): An interesting refresher on how to write a parser (I refuse to use eval on untrusted inputs).
+* Day 14 (Regolith Reservoir): Just like in 2018 day 17, there's no need to retrace the sand's path every time.
+  This time it's even easier to achieve this:
+  Each grain of falling sand spawns three grains at positions beneath itself, then fills itself in.
 
 # Takeaways
 
