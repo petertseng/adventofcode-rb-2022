@@ -35,6 +35,7 @@ Favourite problems:
 
 * Day 09 (Rope Bridge): Interesting problem to think about for sure!
 * Day 14 (Regolith Reservoir): Good to revisit an old favourite (2018 day 17).
+* Day 15 (Beacon Exclusion Zone): Also good to revisit an easier version of a tough problem (2018 day 23) and see that many of the same tricks apply. Good opportunities for optimisation.
 
 Interesting approaches:
 
@@ -47,6 +48,9 @@ Interesting approaches:
 * Day 14 (Regolith Reservoir): Just like in 2018 day 17, there's no need to retrace the sand's path every time.
   This time it's even easier to achieve this:
   Each grain of falling sand spawns three grains at positions beneath itself, then fills itself in.
+* Day 15 (Beacon Exclusion Zone): Just like in 2018 day 23, a change of coordinate system allows the sensors' ranges to easily be described with linear equations.
+  https://www.reddit.com/r/adventofcode/comments/a9co1u/day_23_part_2_adversarial_input_for_recursive/ecmpxad/
+  Since there is only one undetected point, we see that it has to lie just beyond a sensor's range in all four directions, so extend all sensors and look for where a pair of ranges where this is true in both the rising and falling directions.
 
 # Takeaways
 
