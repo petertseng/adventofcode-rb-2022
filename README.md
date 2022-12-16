@@ -51,6 +51,10 @@ Interesting approaches:
 * Day 15 (Beacon Exclusion Zone): Just like in 2018 day 23, a change of coordinate system allows the sensors' ranges to easily be described with linear equations.
   https://www.reddit.com/r/adventofcode/comments/a9co1u/day_23_part_2_adversarial_input_for_recursive/ecmpxad/
   Since there is only one undetected point, we see that it has to lie just beyond a sensor's range in all four directions, so extend all sensors and look for where a pair of ranges where this is true in both the rising and falling directions.
+* Day 16 (Proboscidea Volcanium): I had hit upon many of the good ideas early (ignore valves with 0 flow rate, use ints everywhere, cache results).
+  However, the single most important optimisation had eluded me:
+  To quickly find two disjoint sets of valves without checking all pairs, first sort them by flow descending so you know the maximum possible value achievable by any yet-unexamined route.
+  Then you know when to (and should) break out of the inner or outer loop once it's no longer possible to beat the current best.
 
 # Takeaways
 
@@ -72,6 +76,13 @@ Interesting approaches:
 * Day 09 (Rope Bridge): Actually part 2 warned us that "more types of motion are possible than before", which is indeed the case, since tails can move diagonally, whereas the head never does.
   I didn't cover this case since I didn't write an `else raise "invalid"` (or similar) in my follow check.
   So if an earlier part's assumption could potetially be violated, there needs to be an assertion on that assumption.
+* Day 16 (Proboscidea Volcanium): The example actively sabotaged me.
+  An early strategy I considered was to have the protagonist do as much work as possible, then start the elephant from that point.
+  This strategy works for our personal inputs, but gets the wrong answer for the example input because the protagonist does too much work and doesn't leave enough for the elephant to do.
+  Allowing the protagonist to stop working at any point (`allow_idle` in the code) allows this approacch to work for the example but be too slow for our personal inputs.
+  So, there is no one configuration that works for both the example and our personal inputs.
+  I initially did not allow the protagonist to stop at any point, since I did not know this matters, and therefore I would always get an answer that was too low on the example.
+  Since it was too low, I didn't bother trying it on my personal input, when in reality it would have worked.
 
 # Posting schedule and policy
 
