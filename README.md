@@ -36,6 +36,7 @@ Favourite problems:
 * Day 09 (Rope Bridge): Interesting problem to think about for sure!
 * Day 14 (Regolith Reservoir): Good to revisit an old favourite (2018 day 17).
 * Day 15 (Beacon Exclusion Zone): Also good to revisit an easier version of a tough problem (2018 day 23) and see that many of the same tricks apply. Good opportunities for optimisation.
+* Day 17 (Pyroclastic Flow): Part 1 is a classic, in the cultural sense, and implementing it was inteesting. Part 2 is a classic in the Advent of Code sense and is an interesting application of it.
 
 Interesting approaches:
 
@@ -55,6 +56,9 @@ Interesting approaches:
   However, the single most important optimisation had eluded me:
   To quickly find two disjoint sets of valves without checking all pairs, first sort them by flow descending so you know the maximum possible value achievable by any yet-unexamined route.
   Then you know when to (and should) break out of the inner or outer loop once it's no longer possible to beat the current best.
+* Day 17 (Pyroclastic Flow): A lot of solutions differ on how they choose to detect cycles!
+  You can detect it just by looking at the height differences.
+  But I chose to call it a cycle when five consecutive rocks fall in the same x position and wind index as they did in a previous wind cycle.
 
 # Takeaways
 
