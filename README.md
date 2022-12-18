@@ -87,6 +87,8 @@ Interesting approaches:
   So, there is no one configuration that works for both the example and our personal inputs.
   I initially did not allow the protagonist to stop at any point, since I did not know this matters, and therefore I would always get an answer that was too low on the example.
   Since it was too low, I didn't bother trying it on my personal input, when in reality it would have worked.
+* Day 18 (Boiling Boulders): For inexplicable reasons, I hadn't converted my set of boulders from a list to a set, which slowed down the existence checks.
+  Not sure why I didn't do that, really.
 
 # Posting schedule and policy
 
