@@ -59,6 +59,12 @@ Interesting approaches:
 * Day 17 (Pyroclastic Flow): A lot of solutions differ on how they choose to detect cycles!
   You can detect it just by looking at the height differences.
   But I chose to call it a cycle when five consecutive rocks fall in the same x position and wind index as they did in a previous wind cycle.
+* Day 19 (Not Enough Minerals): Many interesting optimisations for this one.
+  The code comments give an idea of how much time each optimisation saved.
+  There are two main classes of approach:
+  Step forward one minute at a time, or step forward one robot at a time.
+  I found the per-minute approach to be more performant so I stuck with it.
+  A surprisingly good optimisation was to not build a robot you could afford but chose not to build in a previous minute.
 
 # Takeaways
 
