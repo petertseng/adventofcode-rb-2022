@@ -65,6 +65,8 @@ Interesting approaches:
   Step forward one minute at a time, or step forward one robot at a time.
   I found the per-minute approach to be more performant so I stuck with it.
   A surprisingly good optimisation was to not build a robot you could afford but chose not to build in a previous minute.
+* Day 20 (Grove Positioning System): Looking for data structures with fast insert and fast search (possibly by allowing references to elements).
+  I stuck with an O(√N) one, but the door is open for exploring whether a O(log N) one would be an improvement.
 
 # Takeaways
 
