@@ -67,6 +67,10 @@ Interesting approaches:
   A surprisingly good optimisation was to not build a robot you could afford but chose not to build in a previous minute.
 * Day 20 (Grove Positioning System): Looking for data structures with fast insert and fast search (possibly by allowing references to elements).
   I stuck with an O(√N) one, but the door is open for exploring whether a O(log N) one would be an improvement.
+* Day 21 (Monkey Math): It's interesting that you can define a map (Hash in Ruby) in terms of itself.
+  I've actually never done that before in Ruby, though my Haskell solutions do so from time to time.
+  To make the two sides equal I originally used binary search but the secant method does turn out to be faster.
+  Some others have suggested symbolically inverting the operations, but I haven't tried that approach yet.
 
 # Takeaways
 
