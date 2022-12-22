@@ -71,6 +71,8 @@ Interesting approaches:
   I've actually never done that before in Ruby, though my Haskell solutions do so from time to time.
   To make the two sides equal I originally used binary search but the secant method does turn out to be faster.
   Some others have suggested symbolically inverting the operations, but I haven't tried that approach yet.
+* Day 22 (Monkey Map): My solution can't handle arbitrary cube nets, only the specific ones in the example and personal inputs.
+  It's all hard-coded, with only a small convenience function that ensures that all connections are symmetric/two-way.
 
 # Takeaways
 
@@ -101,6 +103,7 @@ Interesting approaches:
   Since it was too low, I didn't bother trying it on my personal input, when in reality it would have worked.
 * Day 18 (Boiling Boulders): For inexplicable reasons, I hadn't converted my set of boulders from a list to a set, which slowed down the existence checks.
   Not sure why I didn't do that, really.
+* Day 22 (Monkey Map): Ah, unfortunate: I updated my facing to be the facing I would be on the new cube face even if my way was blocked by a wall on the new cube face. You are not supposed to do that. Don't partially update state if the state might get rolled back due to a check. I wasted two hours on this and it was an unpleasant experience. This day is impossible to debug because how are you supposed to pick out the move you got wrong out of 2000?
 
 # Posting schedule and policy
 
