@@ -73,6 +73,7 @@ Interesting approaches:
   Some others have suggested symbolically inverting the operations, but I haven't tried that approach yet.
 * Day 22 (Monkey Map): My solution can't handle arbitrary cube nets, only the specific ones in the example and personal inputs.
   It's all hard-coded, with only a small convenience function that ensures that all connections are symmetric/two-way.
+* Day 23 (Unstable Diffusion): Store each row of elves as a bit field.
 
 # Takeaways
 
