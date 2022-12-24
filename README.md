@@ -74,6 +74,9 @@ Interesting approaches:
 * Day 22 (Monkey Map): My solution can't handle arbitrary cube nets, only the specific ones in the example and personal inputs.
   It's all hard-coded, with only a small convenience function that ensures that all connections are symmetric/two-way.
 * Day 23 (Unstable Diffusion): Store each row of elves as a bit field.
+* Day 24 (Blizzard Basin): Breadth-first search is faster than A\*.
+  Store blizzard positions and the set of possible positions of the expedition party as bit fields.
+  No visited set is needed because the entire frontier is at the same time step.
 
 # Takeaways
 
@@ -105,6 +108,7 @@ Interesting approaches:
 * Day 18 (Boiling Boulders): For inexplicable reasons, I hadn't converted my set of boulders from a list to a set, which slowed down the existence checks.
   Not sure why I didn't do that, really.
 * Day 22 (Monkey Map): Ah, unfortunate: I updated my facing to be the facing I would be on the new cube face even if my way was blocked by a wall on the new cube face. You are not supposed to do that. Don't partially update state if the state might get rolled back due to a check. I wasted two hours on this and it was an unpleasant experience. This day is impossible to debug because how are you supposed to pick out the move you got wrong out of 2000?
+* Day 24 (Blizzard Basin): I tested against the wrong example so I didn't bother submitting my answer. I should have submitted.
 
 # Posting schedule and policy
 
